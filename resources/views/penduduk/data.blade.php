@@ -1,5 +1,4 @@
-ini adalah data penduduk
-<!--<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -9,6 +8,11 @@ ini adalah data penduduk
 </head>
 <body>
     <center>
+        <p>
+            <button type="button" onclick="window.location='/penduduk/tambah'">
+                Tambah
+            </button>
+        </p>
         <table style="width: 80%; border-collapse: 1; border:1px solid #000" border="1">
             <thead>
                 <th>No</th>
@@ -18,10 +22,13 @@ ini adalah data penduduk
                 <th>Password</th>
             </thead>
             <tbody>
-                @foreach (datapenduduk as $d)
+                @foreach ( $dataPenduduk as $d )
                     <tr>
-                        <td></td>
+                        <td>{{ $loop->iteration }}</td>
                         <td>{{ $d->nik }}</td>
+                        <td>{{ $d->nama }}</td>
+                        <td>{{ $d->email }}</td>
+                        <td>{{ $d->password }}</td>
                     </tr>
                 @endforeach
             </tbody>

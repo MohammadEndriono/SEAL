@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\penduduk;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -21,4 +21,8 @@ use Illuminate\Support\Facades\Route;
 
 Route::controller(penduduk::class)->group(function () {
     Route::get('/penduduk/index', 'index');
+    Route::get('/penduduk/tambah', 'add');
+    Route::post('/penduduk/simpan', 'save');
 });
+
+
